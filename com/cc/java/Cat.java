@@ -5,11 +5,14 @@ public class Cat {
   private String name;
   private String furColor;
   private int age; 
+  private boolean isfemale;
 
-public Cat(String name, String furColor, int age) {
+
+public Cat(String name, String furColor, int age, boolean female) {
     this.name = name;
     this.furColor = furColor;
     this.age = age;
+    this.isfemale = female;
   }
 
 public String getStringAttributes(String op) {
@@ -23,7 +26,11 @@ public String getStringAttributes(String op) {
     } 
 }
 
-public int getAge() {
-    return age;
+public String getAge() {
+  if (isfemale) {
+    return "This is an inappropriate question!";
+  } else {
+    return String.valueOf(age);
+  }
 }
 }
