@@ -28,9 +28,14 @@ public String getStringAttributes(String op) {
 
 public String getAge() {
   if (isfemale) {
-    return "This is an inappropriate question!";
-  } else {
+    return checkEscalationLevel();  
+  } 
+  else {
     return String.valueOf(age);
   }
+}
+
+private String checkEscalationLevel() {
+  return "This is an inappropriate question!";
 }
 }
